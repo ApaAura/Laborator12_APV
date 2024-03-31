@@ -119,6 +119,7 @@
             delete_btn.TabIndex = 12;
             delete_btn.Text = "Delete";
             delete_btn.UseVisualStyleBackColor = true;
+            delete_btn.Click += delete_btn_Click;
             // 
             // update_btn
             // 
@@ -129,6 +130,7 @@
             update_btn.TabIndex = 11;
             update_btn.Text = "Update";
             update_btn.UseVisualStyleBackColor = true;
+            update_btn.Click += update_btn_Click;
             // 
             // save_btn
             // 
@@ -139,6 +141,7 @@
             save_btn.TabIndex = 10;
             save_btn.Text = "Save";
             save_btn.UseVisualStyleBackColor = true;
+            save_btn.Click += save_btn_Click;
             // 
             // textBoxSalariu
             // 
@@ -212,6 +215,7 @@
             Controls.Add(panel1);
             Name = "Form1";
             Text = "Form1";
+            Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridViewEmployeeList).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
