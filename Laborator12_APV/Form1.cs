@@ -49,7 +49,20 @@ namespace Laborator12_APV
 
         private void delete_btn_Click(object sender, EventArgs e)
         {
+            if (dataGridViewEmployeeList.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = dataGridViewEmployeeList.SelectedRows[0];
+                int employeeId = Convert.ToInt32(selectedRow.Cells["Id"].Value);
+                Employee empToDelete = _db.Employees.Find(employeeId);
+                _db.Employees.Remove(empToDelete);
 
+                ApplyChanges();
+                ClearFields();
+            }
+            else
+            {
+                MessageBox.Show("Selectati un angajat pentru stergere !");
+            }
         }
         private void dataGridViewEmployeeList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
